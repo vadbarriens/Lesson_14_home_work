@@ -25,17 +25,6 @@ def second_product():
 def categories():
     return Category(
         name="Телевизоры",
-        description="Современный телевизор, который позволяет наслаждаться просмотром, "
-        "станет вашим другом и помощником",
+        description="Современный телевизор, который позволяет наслаждаться просмотром, станет вашим другом и помощником",
         products="product1",
     )
-
-
-@pytest.fixture
-def category_count():
-    return 1
-
-
-@pytest.fixture
-def product_count():
-    return 2

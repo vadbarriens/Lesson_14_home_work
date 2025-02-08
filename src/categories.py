@@ -1,5 +1,6 @@
 class Category:
     """Класс, подсчитывающий количество товаров и количество категорий"""
+
     name: str
     description: str
     products: list
