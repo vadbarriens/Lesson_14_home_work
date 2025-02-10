@@ -9,6 +9,9 @@ class Category:
     category_count = 0
 
     def __init__(self, name, description, products):
+        """
+        Конструктор класса Category
+        """
         self.name = name
         self.description = description
         self.__products = products
@@ -18,13 +21,22 @@ class Category:
 
 
     def add_product(self, product):
+        """
+        Добавляет товар в категорию.
+        """
         self.__products.append(product)
         Category.product_count += 1
 
+    def get_products(self):
+        """
+        Возвращает список товаров в категории.
+        """
+        return self.__products
 
     @property
-    def products(self):
-        list_product = ''
-        for product in self.__products:
-            list_product += f'{product.name}, {product.price} руб. Остаток: {product.quantity} шт.\n'
-        return list_product
+    def products(self) -> str:
+        """
+        Геттер для получения списка товаров в виде строки.
+        """
+        return "\n".join(
+            [f"{product.name}, {product.price} руб. Остаток: {product.quantity} шт." for product in self.__products])
