@@ -20,7 +20,9 @@ def test_add_product():
     Проверка добавления товара в категорию.
     """
     # Создаем категорию
-    category = Category(name="Электроника", description="Техника для дома и офиса", products=[])
+    category = Category(
+        name="Электроника", description="Техника для дома и офиса", products=[]
+    )
 
     # Создаем товар
     product = Product(
@@ -82,7 +84,9 @@ def test_category_products_getter():
         price=80000.00,
         quantity=25,
     )
-    category = Category(name="Электроника", description="Техника для дома и офиса", products=[])
+    category = Category(
+        name="Электроника", description="Техника для дома и офиса", products=[]
+    )
 
     category.add_product(product1)
     category.add_product(product2)
@@ -99,10 +103,17 @@ def test_add_product1():
     Проверка добавления товара в категорию.
     """
     # Создаем категорию
-    category = Category(name="Электроника", description="Техника для дома и офиса", products=[])
+    category = Category(
+        name="Электроника", description="Техника для дома и офиса", products=[]
+    )
 
     # Создаем товар
-    product = Product(name="Ноутбук", description="Мощный игровой ноутбук", price=120000.50, quantity=10)
+    product = Product(
+        name="Ноутбук",
+        description="Мощный игровой ноутбук",
+        price=120000.50,
+        quantity=10,
+    )
 
     # Добавляем товар в категорию
     category.add_product(product)

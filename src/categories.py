@@ -19,7 +19,6 @@ class Category:
         Category.category_count += 1
         Category.product_count += len(products)
 
-
     def add_product(self, product):
         """
         Добавляет товар в категорию.
@@ -39,4 +38,8 @@ class Category:
         Геттер для получения списка товаров в виде строки.
         """
         return "\n".join(
-            [f"{product.name}, {product.price} руб. Остаток: {product.quantity} шт." for product in self.__products])
+            [
+                f"{product.name}, {product.price} руб. Остаток: {product.quantity} шт."
+                for product in self.__products
+            ]
+        )
