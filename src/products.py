@@ -28,6 +28,7 @@ class Product:
                 if user_response == 'y':
                     self.__price = new_price
 
+
     @classmethod
     def new_product(cls, dict_products):
         name = dict_products['name']

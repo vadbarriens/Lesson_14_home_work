@@ -1,5 +1,3 @@
-from src.products import Product
-
 class Category:
     """Класс, подсчитывающий количество товаров и количество категорий"""
 
@@ -27,6 +25,6 @@ class Category:
     @property
     def products(self):
         list_product = ''
-        for prod in self.__products:
-            list_product = f'{prod.name}, {prod.price} руб. Остаток: {prod.quantity} шт.'
+        for product in self.__products:
+            list_product += f'{product.name}, {product.price} руб. Остаток: {product.quantity} шт.\n'
         return list_product
