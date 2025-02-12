@@ -20,7 +20,7 @@ class Product:
         Магический метод, возвращающий строковое отображение в необходимом виде
         :return:
         """
-        return f'{self.name}, {self.__price} руб. Остаток: {self.quantity} шт.'
+        return f"{self.name}, {self.__price} руб. Остаток: {self.quantity} шт."
 
     def __add__(self, other):
         """

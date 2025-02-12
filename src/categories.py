@@ -29,7 +29,7 @@ class Category:
         sum_products = 0
         for product in self.__products:
             sum_products += product.quantity
-        return f'{self.name}, количество продуктов: {sum_products} шт.'
+        return f"{self.name}, количество продуктов: {sum_products} шт."
 
     def add_product(self, product: Product):
         """
@@ -51,9 +51,4 @@ class Category:
         """
         Геттер для получения списка товаров в виде строки.
         """
-        return "\n".join(
-            [
-                f"{str(product)}"
-                for product in self.__products
-            ]
-        )
+        return "\n".join([f"{str(product)}" for product in self.__products])

@@ -126,4 +126,4 @@ def test_add_product1():
 
 def test_categories_str(categories1):
     """Проверка корректного вывода строки класса категории"""
-    assert str(categories1) == 'Электроника, количество продуктов: 10 шт.'
+    assert str(categories1) == "Электроника, количество продуктов: 10 шт."

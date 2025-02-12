@@ -38,7 +38,9 @@ def test_price_getter_setter():
 
 def test_products_str(first_product):
     """Проверка корректного вывода строки класса продукты"""
-    assert str(first_product) == "Samsung Galaxy S23 Ultra, 180000.0 руб. Остаток: 5 шт."
+    assert (
+        str(first_product) == "Samsung Galaxy S23 Ultra, 180000.0 руб. Остаток: 5 шт."
+    )
 
 
 def test_products_add(first_product, second_product):
