@@ -23,6 +23,9 @@ class Category:
         Category.product_count += len(products)
 
     def __str__(self):
+        """
+        Магический метод, возвращающий строковое отображение в необходимом виде
+        """
         sum_products = 0
         for product in self.__products:
             sum_products += product.quantity

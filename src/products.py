@@ -16,9 +16,18 @@ class Product:
         self.quantity = quantity
 
     def __str__(self):
+        """
+        Магический метод, возвращающий строковое отображение в необходимом виде
+        :return:
+        """
         return f'{self.name}, {self.__price} руб. Остаток: {self.quantity} шт.'
 
     def __add__(self, other):
+        """
+        Магический метод, складывающий стоимости товаров с учётом количества на складе
+        :param other:
+        :return:
+        """
         return self.__price * self.quantity + other.__price * other.quantity
 
     @property
