@@ -28,3 +28,19 @@ def categories():
         description="Современный телевизор, который позволяет наслаждаться просмотром, станет вашим другом и помощником",
         products="product1",
     )
+
+
+@pytest.fixture
+def categories1():
+    product1 = Product(
+        name="Ноутбук",
+        description="Мощный игровой ноутбук",
+        price=120000.50,
+        quantity=10,
+    )
+    category = Category(
+        name="Электроника",
+        description="Техника для дома и офиса",
+        products=[product1],
+    )
+    return category

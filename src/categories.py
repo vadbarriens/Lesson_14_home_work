@@ -22,6 +22,15 @@ class Category:
         Category.category_count += 1
         Category.product_count += len(products)
 
+    def __str__(self):
+        """
+        Магический метод, возвращающий строковое отображение в необходимом виде
+        """
+        sum_products = 0
+        for product in self.__products:
+            sum_products += product.quantity
+        return f"{self.name}, количество продуктов: {sum_products} шт."
+
     def add_product(self, product: Product):
         """
         Добавляет товар в категорию.
@@ -42,9 +51,4 @@ class Category:
         """
         Геттер для получения списка товаров в виде строки.
         """
-        return "\n".join(
-            [
-                f"{product.name}, {product.price} руб. Остаток: {product.quantity} шт."
-                for product in self.__products
-            ]
-        )
+        return "\n".join([f"{str(product)}" for product in self.__products])

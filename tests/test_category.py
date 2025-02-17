@@ -122,3 +122,8 @@ def test_add_product1():
     assert len(category.get_products()) == 1
     assert category.get_products()[0].name == "Ноутбук"
     assert Category.product_count == 14  # Общее количество товаров увеличилось
+
+
+def test_categories_str(categories1):
+    """Проверка корректного вывода строки класса категории"""
+    assert str(categories1) == "Электроника, количество продуктов: 10 шт."
