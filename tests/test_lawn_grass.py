@@ -1,6 +1,5 @@
 import pytest
 
-from src.products import LawnGrass
 
 def test_lawn_grass_init(grass1):
     assert grass1.name == "Газонная трава"
@@ -18,4 +17,4 @@ def test_add_smartphones(grass1, grass2):
 
 def test_add_smartphones_error(grass1):
     with pytest.raises(TypeError):
-        result = grass1 + 1
+        grass1 + 1

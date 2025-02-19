@@ -132,6 +132,12 @@ def test_categories_str(categories1):
 
 
 def test_add_product_error(smartphone1):
-    category_smartphones = Category("Смартфоны", "Высокотехнологичные смартфоны", [smartphone1, ])
+    category_smartphones = Category(
+        "Смартфоны",
+        "Высокотехнологичные смартфоны",
+        [
+            smartphone1,
+        ],
+    )
     with pytest.raises(TypeError):
         category_smartphones.add_product()

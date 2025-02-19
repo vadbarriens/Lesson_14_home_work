@@ -1,5 +1,5 @@
-from src.products import Smartphone
 import pytest
+
 
 def test_smartphone_init(smartphone1):
     assert smartphone1.name == "Samsung Galaxy S23 Ultra"
@@ -11,9 +11,11 @@ def test_smartphone_init(smartphone1):
     assert smartphone1.memory == 256
     assert smartphone1.color == "Серый"
 
+
 def test_add_smartphones(smartphone1, smartphone2):
     assert smartphone1 + smartphone2 == 2580000.0
 
+
 def test_add_smartphones_error(smartphone1):
     with pytest.raises(TypeError):
-        result = smartphone1 + 1
+        smartphone1 + 1

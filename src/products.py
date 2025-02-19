@@ -32,7 +32,6 @@ class Product:
             return self.__price * self.quantity + other.__price * other.quantity
         raise TypeError
 
-
     @property
     def price(self):
         """
@@ -82,16 +81,23 @@ class Product:
 
 class Smartphone(Product):
     """Подкласс смартфоны (расширенный от класса продукты)"""
-    def __init__(self, name, description, price, quantity, efficiency, model, memory, color):
+
+    def __init__(
+        self, name, description, price, quantity, efficiency, model, memory, color
+    ):
         super().__init__(name, description, price, quantity)
         self.efficiency = efficiency
         self.model = model
         self.memory = memory
         self.color = color
 
+
 class LawnGrass(Product):
     """Подкласс смартфоны (расширенный от класса продукты)"""
-    def __init__(self, name, description, price, quantity, country, germination_period, color):
+
+    def __init__(
+        self, name, description, price, quantity, country, germination_period, color
+    ):
         super().__init__(name, description, price, quantity)
         self.country = country
         self.germination_period = germination_period
