@@ -1,3 +1,5 @@
+import pytest
+
 from src.categories import Category
 from src.products import Product
 
@@ -127,3 +129,9 @@ def test_add_product1():
 def test_categories_str(categories1):
     """Проверка корректного вывода строки класса категории"""
     assert str(categories1) == "Электроника, количество продуктов: 10 шт."
+
+
+def test_add_product_error(smartphone1):
+    category_smartphones = Category("Смартфоны", "Высокотехнологичные смартфоны", [smartphone1, ])
+    with pytest.raises(TypeError):
+        category_smartphones.add_product()
