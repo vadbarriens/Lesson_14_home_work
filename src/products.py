@@ -28,7 +28,9 @@ class Product:
         :param other:
         :return:
         """
-        return self.__price * self.quantity + other.__price * other.quantity
+        if type(other) is type(self):
+            return self.__price * self.quantity + other.__price * other.quantity
+        raise TypeError
 
     @property
     def price(self):
@@ -75,3 +77,28 @@ class Product:
                     return product
 
         return cls(name, description, price, quantity)
+
+
+class Smartphone(Product):
+    """Подкласс смартфоны (расширенный от класса продукты)"""
+
+    def __init__(
+        self, name, description, price, quantity, efficiency, model, memory, color
+    ):
+        super().__init__(name, description, price, quantity)
+        self.efficiency = efficiency
+        self.model = model
+        self.memory = memory
+        self.color = color
+
+
+class LawnGrass(Product):
+    """Подкласс смартфоны (расширенный от класса продукты)"""
+
+    def __init__(
+        self, name, description, price, quantity, country, germination_period, color
+    ):
+        super().__init__(name, description, price, quantity)
+        self.country = country
+        self.germination_period = germination_period
+        self.color = color
