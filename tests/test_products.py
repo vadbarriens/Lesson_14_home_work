@@ -46,3 +46,17 @@ def test_products_str(first_product):
 def test_products_add(first_product, second_product):
     """Проверка сложения сумм цен товаров"""
     assert first_product + second_product == 2580000.0
+
+
+def test_new_product():
+    dict_products = {
+        "name": "Iphone 15",
+        "description": "512GB, Gray space",
+        "price": 210000.0,
+        "quantity": 8,
+    }
+    product = Product.new_product(dict_products)
+    assert product.name == "Iphone 15"
+    assert product.description == "512GB, Gray space"
+    assert product.price == 210000.0
+    assert product.quantity == 8
