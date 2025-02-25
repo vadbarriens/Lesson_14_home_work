@@ -2,7 +2,7 @@ from src.base_product import BaseProduct
 from src.print_mixin import PrintMixin
 
 
-class Product(BaseProduct, PrintMixin):
+class Product(PrintMixin, BaseProduct):
     """Класс, описывающий товары, цену и наличие"""
 
     name: str
