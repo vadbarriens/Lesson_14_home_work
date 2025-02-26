@@ -58,6 +58,10 @@ class Category:
         Метод, который подсчитывает средний ценник всех товаров
         """
         try:
-            return round(sum(product.price for product in self.__products) / len(self.__products), 2)
+            return round(
+                sum(product.price for product in self.__products)
+                / len(self.__products),
+                2,
+            )
         except ZeroDivisionError:
             return 0

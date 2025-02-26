@@ -64,6 +64,8 @@ def test_not_product_quantity():
             name="Iphone 15",
             description="512GB, Gray space",
             price=210000.0,
-            quantity=0
+            quantity=0,
         )
-        assert str(excinfo.value) == "Товар с нулевым количеством не может быть добавлен"
+        assert (
+            str(excinfo.value) == "Товар с нулевым количеством не может быть добавлен"
+        )

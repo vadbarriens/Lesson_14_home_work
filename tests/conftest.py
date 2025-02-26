@@ -93,9 +93,10 @@ def grass2():
         "Темно-зеленый",
     )
 
+
 @pytest.fixture
 def dict_products():
-    return  {
+    return {
         "name": "Iphone 15",
         "description": "512GB, Gray space",
         "price": 210000.0,
