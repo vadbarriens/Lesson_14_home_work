@@ -52,3 +52,16 @@ class Category:
         Геттер для получения списка товаров в виде строки.
         """
         return "\n".join([f"{str(product)}" for product in self.__products])
+
+    def middle_price(self):
+        """
+        Метод, который подсчитывает средний ценник всех товаров
+        """
+        try:
+            return round(
+                sum(product.price for product in self.__products)
+                / len(self.__products),
+                2,
+            )
+        except ZeroDivisionError:
+            return 0

@@ -1,3 +1,5 @@
+import pytest
+
 from src.products import Product
 
 
@@ -48,15 +50,22 @@ def test_products_add(first_product, second_product):
     assert first_product + second_product == 2580000.0
 
 
-def test_new_product():
-    dict_products = {
-        "name": "Iphone 15",
-        "description": "512GB, Gray space",
-        "price": 210000.0,
-        "quantity": 8,
-    }
+def test_new_product(dict_products):
     product = Product.new_product(dict_products)
     assert product.name == "Iphone 15"
     assert product.description == "512GB, Gray space"
     assert product.price == 210000.0
     assert product.quantity == 8
+
+
+def test_not_product_quantity():
+    with pytest.raises(ValueError) as excinfo:
+        Product(
+            name="Iphone 15",
+            description="512GB, Gray space",
+            price=210000.0,
+            quantity=0,
+        )
+        assert (
+            str(excinfo.value) == "Товар с нулевым количеством не может быть добавлен"
+        )
